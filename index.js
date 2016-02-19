@@ -14,9 +14,10 @@ app.get('/', function(req, res) {
 });
 
 
-
-
-
+//TATTOO BOARD
+// url('https://api.pinterest.com/v1/boards/buzzfeed/tattoos/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
+//TYPOGRAPHY BOARD
+url('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
 
 
 

@@ -17,7 +17,20 @@ app.get('/', function(req, res) {
 //TATTOO BOARD
 // url('https://api.pinterest.com/v1/boards/buzzfeed/tattoos/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
 //TYPOGRAPHY BOARD
-url('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
+// url('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
+
+app.get('/type', function(req, res) {
+	request('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + process.env.PINTEREST_TOKEN, function(err, response, body) {
+		if(!err && response.statusCode === 200) {
+			res.send(body);
+		
+    
+
+		} else {
+			res.send(err); //later you can render
+		}
+	});
+});
 
 
 

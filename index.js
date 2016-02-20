@@ -8,29 +8,27 @@ app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.json);
 
 app.get('/', function(req, res) {
-	res.send('I work');
+	res.render('index.ejs');
 });
 
 
-//TATTOO BOARD
-// url('https://api.pinterest.com/v1/boards/buzzfeed/tattoos/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
-//TYPOGRAPHY BOARD
-// url('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + PROCESS_ENV['PINTEREST_TOKEN']
-
 app.get('/type', function(req, res) {
-	request('https://api.pinterest.com/v1/boards/sharvey/typography-hand-lettering/pins/?access_token=' + process.env.PINTEREST_TOKEN, function(err, response, body) {
-		if(!err && response.statusCode === 200) {
-			res.send(body);
-		
-    
-
+	request('https://api.pinterest.com/v1/boards/dalepartridge/typography-design/pins/?access_token=' + process.env.PINTEREST_TOKEN + '&fields=id,link,image', function(err, response, body) {
+		var parsedBody = JSON.parse(body); //turns it into a javascript object instead of a string
+		if(!err && response.statusCode === 200 && parsedBody.data) { //checking to see if data exists on parsedBody
+			res.render('showpage.ejs', {data: parsedBody.data});
 		} else {
 			res.send(err); //later you can render
 		}
 	});
 });
+
+app.post('/type', function(req, res) {
+	
+})
 
 
 

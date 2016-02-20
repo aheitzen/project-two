@@ -1,2 +1,3 @@
+# add things here you do not want github to see
 node_modules
-.ENV
+.env

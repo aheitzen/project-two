@@ -2,6 +2,13 @@
 
 <% data.forEach(function(pin) { %>
 	<img src="<%= pin.image.original.url %>">
+
+	<form action='/favorite' method="POST">
+	<input type="hidden" value="<%= pin.image.original.url %>" name="url">
+	<button type='submit'>Submit</button>
+		
+
+	</form>
 	
 
 <%	}); %>

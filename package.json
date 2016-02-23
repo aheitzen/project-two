@@ -17,13 +17,19 @@
   },
   "homepage": "https://github.com/aheitzen/project-two#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-ejs-layouts": "^2.0.0",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^4.4.6",
     "pg-hstore": "^2.3.2",
     "request": "^2.69.0",
-    "sequelize": "^3.19.3"
+    "sequelize": "^3.19.3",
+    "session": "^0.1.0"
   }
 }

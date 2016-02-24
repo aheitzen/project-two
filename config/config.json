@@ -12,11 +12,6 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "project_2",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
     "use_env_variable": "DATABASE_URL"
   }
 }

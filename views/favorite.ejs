@@ -2,6 +2,27 @@
 
 <% user.typographies.forEach(function(typography){ %>
 	<img src="<%= typography.image %>">
+	<button href="/favorite/<%= user.id %>/<%=typography.id%>" class='delete-pin'>delete</button>
 <% }) %>
+
+<script>
+$(function(){
+	$('.delete-pin').on('click', function(e){
+	    e.preventDefault();
+	    console.log('hitting this')
+	    var myUrl = $(this).attr('href');
+	    $.ajax({
+	        method:'PUT',
+	        url:myUrl
+	    }).done(function(){
+	    	console.log('hi')
+	        window.location.replace('');
+	    });
+	});
+});
+</script>
+
+
+
 
 

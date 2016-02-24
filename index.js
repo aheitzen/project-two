@@ -10,14 +10,11 @@ var passport = require('passport');
 var strategies = require('./config/strategies');
 // var LocalStrategy = require('passport-local').Strategy;
 
-
-
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(flash());
-
 
 app.use(session({
   secret: 'sasdlfkajsldfkajweoriw234234ksdfjals23',
@@ -31,14 +28,10 @@ passport.serializeUser(strategies.serializeUser);
 passport.deserializeUser(strategies.deserializeUser);
 passport.use(strategies.localStrategy);
 
-
-
-
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
   next();
 });
-
 
 app.get('/', function(req, res) {
 	res.render('index.ejs');
@@ -54,7 +47,6 @@ app.post('/favorite', function(req, res) {
 			res.redirect('/favorite/' + req.user.id)
 		})
 	})
-	// console.log(req.body);
 });
 
 app.get('/favorite/:userId', function(req, res) {
@@ -64,7 +56,6 @@ app.get('/favorite/:userId', function(req, res) {
 	}).then(function(user) {
 		res.render('favorite.ejs', {user: user});
 	});
-	
 });
 
 app.get('/login', function(req, res) {
@@ -126,6 +117,13 @@ app.post('/signup', function(req, res) {
 	});
 });
 
+app.put('/favorite/:userId/:typographyId', function(req, res) {
+	db.user.findById(req.params.userId).then(function(user) {
+			user.removeTypography(req.params.typographyId).then(function() {
+			res.sendStatus(200);
+		})
+	})
+});
 
 
 
@@ -178,6 +176,15 @@ app.get('/type', function(req, res) {
 	});
 		
 });
+
+
+
+
+
+
+
+
+
 
 
 

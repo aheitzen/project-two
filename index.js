@@ -38,16 +38,26 @@ app.get('/', function(req, res) {
 });
 
 app.post('/favorite', function(req, res) {
-	db.user.find({
-		where: {id: req.user.id}
-	}).then(function(user) {
-		user.createTypography({
-			image: req.body.url
-		}).then(function(typography) {
-			res.redirect('/favorite/' + req.user.id)
+	if(req.user) {
+		db.user.find({
+			where: {id: req.user.id}
+		}).then(function(user) {
+			user.createTypography({
+				image: req.body.url
+			}).then(function(typography) {
+				res.redirect('/favorite/' + req.user.id)
+			})
+
 		})
-	})
+		
+	} else {
+		res.redirect('/login');
+	}
 });
+
+// app.get('/favorite', function(req, res) {
+// 	res.redirect('/login');
+// })
 
 app.get('/favorite/:userId', function(req, res) {
 	db.user.find({
@@ -177,6 +187,32 @@ app.get('/type', function(req, res) {
 		
 });
 
+function firstRequest(callback) {
+  request('..pinterest url', function(err, response, body) {
+    console.log(body);
+    var parsedBody = JSON.parse(body);
+    callback(null, parsedBody.page.next);
+  }));
+}
+
+function otherRequests(nextPage, callback) {
+  request(nextPage, function(err, response, body {
+    console.log(body);
+    var parsedBody = JSON.parse(body);
+    callback(null, parsedBody.page.next);
+  }));
+}
+
+var pinterestRequests = [firstRequest];
+for (var i = 0; i < 10; i++) {
+  pinterestRequests.push(otherRequests);
+}
+
+// pinterestRequests = [firstRequest, otherRequests, otherRequests, otherRequests]
+
+async.waterfall(pinterestRequests, function(err, results) {
+  console.log(results);
+})
 
 
 

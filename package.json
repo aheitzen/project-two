@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aheitzen/project-two#readme",
   "dependencies": {
+    "async": "^1.5.2",
     "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
     "connect-flash": "^0.1.1",

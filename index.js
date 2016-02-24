@@ -8,6 +8,7 @@ var app = express();
 var db = require('./models');
 var passport = require('passport');
 var strategies = require('./config/strategies');
+var async = require('async');
 // var LocalStrategy = require('passport-local').Strategy;
 
 app.set('view engine', 'ejs');
@@ -147,26 +148,78 @@ app.put('/favorite/:userId/:typographyId', function(req, res) {
 
 
 
-app.get('/type', function(req, res) {
 
 
 	
-	request('https://api.pinterest.com/v1/boards/dalepartridge/typography-design/pins/?access_token=' + process.env.PINTEREST_TOKEN + '&fields=id,link,image,note', function(err, response, body) {
-		var parsedBody = JSON.parse(body); //turns it into a javascript object instead of a string
+// 	request('https://api.pinterest.com/v1/boards/dalepartridge/typography-design/pins/?access_token=' + process.env.PINTEREST_TOKEN + '&fields=id,link,image,note', function(err, response, body) {
+// 		var parsedBody = JSON.parse(body); //turns it into a javascript object instead of a string
 		
-		if(!err && response.statusCode === 200 && parsedBody.page.next) {
+// 		if(!err && response.statusCode === 200 && parsedBody.page.next) {
 
 
-			request(parsedBody.page.next, function(err, response, body2) {
-				var parsedBody2 = JSON.parse(body2);
-				parsedBody.data = parsedBody.data.concat(parsedBody2.data);
-				// console.log(parsedBody.data.length);
+// 			request(parsedBody.page.next, function(err, response, body2) {
+// 				var parsedBody2 = JSON.parse(body2);
+// 				parsedBody.data = parsedBody.data.concat(parsedBody2.data);
+// 				// console.log(parsedBody.data.length);
 
 				
 				
-				if(!err && response.statusCode === 200 && parsedBody.data) { //checking to see if data exists on parsedBody
+// 				if(!err && response.statusCode === 200 && parsedBody.data) { //checking to see if data exists on parsedBody
 			
-				var filteredPins = parsedBody.data.filter(function filterByNote(item) {
+// 				var filteredPins = parsedBody.data.filter(function filterByNote(item) {
+// 					if(item.note.toLowerCase().includes(req.query.q.toLowerCase())){
+// 						return true;
+// 					} else {
+// 						return false;
+// 					}
+		
+// 				});
+// 				res.render('showpage.ejs', {data: filteredPins});
+// 				} else {
+// 					res.send(err); //later you can render
+// 				}
+// 			}); 
+// 		} else {
+// 			res.send(err);
+// 		}
+
+// 	});
+		
+// });
+
+app.get('/type', function(req, res) {
+
+	var pins = [];
+	
+	function firstRequest(callback) {
+	  request('https://api.pinterest.com/v1/boards/dalepartridge/typography-design/pins/?access_token=' + process.env.PINTEREST_TOKEN + '&fields=id,link,image,note', function(err, response, body) {
+	    
+	    var parsedBody = JSON.parse(body);
+	  
+	    pins = pins.concat(parsedBody.data);
+	    callback(null, parsedBody.page.next);
+	  });
+	}
+
+	function otherRequests(nextPage, callback) {
+	  request(nextPage, function(err, response, body) {
+	    var parsedBody = JSON.parse(body);
+	    pins = pins.concat(parsedBody.data);
+	    callback(null, parsedBody.page.next);
+	  });
+	}
+
+	var pinterestRequests = [firstRequest];
+	for (var i = 0; i < 21; i++) {
+	  pinterestRequests.push(otherRequests);
+	}
+
+	// pinterestRequests = [firstRequest, otherRequests, otherRequests, otherRequests]
+
+	async.waterfall(pinterestRequests, function(err, results) {
+	  // console.log(pins);
+
+	  var filteredPins = pins.filter(function filterByNote(item) {
 					if(item.note.toLowerCase().includes(req.query.q.toLowerCase())){
 						return true;
 					} else {
@@ -174,45 +227,10 @@ app.get('/type', function(req, res) {
 					}
 		
 				});
-				res.render('showpage.ejs', {data: filteredPins});
-				} else {
-					res.send(err); //later you can render
-				}
-			}); 
-		} else {
-			res.send(err);
-		}
-
-	});
-		
+	  console.log(filteredPins);
+	  res.render('showpage', {data: filteredPins});
+	})
 });
-
-function firstRequest(callback) {
-  request('..pinterest url', function(err, response, body) {
-    console.log(body);
-    var parsedBody = JSON.parse(body);
-    callback(null, parsedBody.page.next);
-  }));
-}
-
-function otherRequests(nextPage, callback) {
-  request(nextPage, function(err, response, body {
-    console.log(body);
-    var parsedBody = JSON.parse(body);
-    callback(null, parsedBody.page.next);
-  }));
-}
-
-var pinterestRequests = [firstRequest];
-for (var i = 0; i < 10; i++) {
-  pinterestRequests.push(otherRequests);
-}
-
-// pinterestRequests = [firstRequest, otherRequests, otherRequests, otherRequests]
-
-async.waterfall(pinterestRequests, function(err, results) {
-  console.log(results);
-})
 
 
 

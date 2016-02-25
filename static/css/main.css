@@ -24,9 +24,13 @@ h1#insta {
 body #opacity {
   background-color: rgba(0, 0, 0, 0.75); 
   height: 100%;
+  top:0;
+  bottom: 0;
   width: 100%;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0; 
+  /*position: fixed;*/
+}
 
 h1#secondtype {
   font-family: 'Alegreya Sans SC', sans-serif;
@@ -155,10 +159,55 @@ input#submitbutton {
 }
 
 img {
-  height: 300px;
-  width: 300px;
-  margin-top: 0 auto;
+  margin: 5px;
+
+  display: inline-block;
+  min-height: 400px;
+  max-height: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray; 
 }
+
+img:hover {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+}
+
+button#showpagebutton {
+  background-color: red;
+  margin-left: 70px;
+}
+
+form#showpageform {
+  margin: 0;
+  float: left;
+
+}
+
+h1#showpagetitle {
+  font-size: 60px;
+  color: white;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-align: center;
+}
+
+body#showpagebody {
+  background-image: url(http://s6.favim.com/orig/141008/beautiful-dark-flowers-grunge-Favim.com-2135748.jpg);
+  /*height: 100%;
+  width: 100%;*/
+  background-repeat: repeat-y;
+  /*background-repeat: repeat-x;*/
+  background-size: 100%;
+}
+
+
 
 
 

@@ -1,11 +1,13 @@
+<body id="favoritebody">
+
 <h1 id="yourfavs">Your Favorites</h1>
 <hr/>
 
 
 
 <% user.typographies.forEach(function(typography){ %>
-	<img src="<%= typography.image %>" class="img-rounded">
-	<button href="/favorite/<%= user.id %>/<%=typography.id%>" class='delete-pin'>delete</button>
+	<img id="favoriteimg" src="<%= typography.image %>" class="img-thumbnail">
+	<button id="favoritebutton" href="/favorite/<%= user.id %>/<%=typography.id%>" class='delete-pin'>delete</button>
 <% }) %>
 
 <script>
@@ -24,6 +26,8 @@ $(function(){
 	});
 });
 </script>
+
+</body>
 
 
 

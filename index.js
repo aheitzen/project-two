@@ -46,7 +46,7 @@ app.post('/favorite', function(req, res) {
 			user.createTypography({
 				image: req.body.url
 			}).then(function(typography) {
-				res.redirect('/favorite/')
+				res.redirect('/favorite') 
 			})
 
 		})

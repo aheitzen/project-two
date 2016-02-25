@@ -210,7 +210,7 @@ h1#showpagetitle {
 }
 
 body#showpagebody {
-  background-image: url(http://24.media.tumblr.com/tumblr_m54j1nIYN21r0k830o1_500.jpg);
+  background-image: url(http://i1316.photobucket.com/albums/t610/Alex_Holmes/Arrow_zps3667764e.png);
   /*height: 100%;
   width: 100%;*/
   background-repeat: repeat-y;
@@ -224,6 +224,23 @@ h1#yourfavs {
   font-family: 'Sansita One', cursive;
   text-align: center;
 
+}
+
+img#favoriteimg {
+  margin-left: 120px;
+
+}
+
+button#favoritebutton {
+  margin-left: 0;
+  margin-right: 0;
+  background: white;
+  
+
+}
+
+body#favoritebody {
+  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/4b/eb/bc/4bebbc58ae80b7dd4e58bf67bf192ed2.jpg);
 }
 
 

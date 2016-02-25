@@ -160,17 +160,22 @@ input#submitbutton {
 
 img {
   margin: 5px;
-
   display: inline-block;
   min-height: 400px;
   max-height: 400px;
   min-width: 400px;
   max-width: 400px;
+
+  /*margin-left: 140px;
+  margin-right: 100px;*/
+/*  float:right;*/
+
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: gray; 
+
 }
 
 img:hover {
@@ -181,31 +186,47 @@ img:hover {
 }
 
 button#showpagebutton {
-  background-color: red;
-  margin-left: 70px;
+  background-color: white;
+  font-size: 30px;
+  margin-left: 50px;
+  margin-right: 0;
+  margin-bottom: 10px;
+  
+
 }
 
 form#showpageform {
-  margin: 0;
-  float: left;
+ /* margin: 0;*/
+ /* float: left;*/
+ margin-left: 480px;
 
 }
 
 h1#showpagetitle {
   font-size: 60px;
   color: white;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Sansita One', cursive;
   text-align: center;
 }
 
 body#showpagebody {
-  background-image: url(http://s6.favim.com/orig/141008/beautiful-dark-flowers-grunge-Favim.com-2135748.jpg);
+  background-image: url(http://24.media.tumblr.com/tumblr_m54j1nIYN21r0k830o1_500.jpg);
   /*height: 100%;
   width: 100%;*/
   background-repeat: repeat-y;
   /*background-repeat: repeat-x;*/
   background-size: 100%;
 }
+
+h1#yourfavs {
+  font-size: 60px;
+  color: white;
+  font-family: 'Sansita One', cursive;
+  text-align: center;
+
+}
+
+
 
 
 

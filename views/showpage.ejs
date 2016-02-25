@@ -1,15 +1,21 @@
 <body id="showpagebody">
 
 
-<h1 id="showpagetitle">Inspire</h1>
+<h1 id="showpagetitle">Results</h1>
+<hr/>
 
 
 <% data.forEach(function(pin) { %>
-	<img src="<%= pin.image.original.url %>" class="img-rounded">
+	
 
 	<form id="showpageform" action='/favorite' method="POST">
 	<input type="hidden" value="<%= pin.image.original.url %>" name="url">
-	<button id="showpagebutton" type='submit'>Submit</button>
+	<img src="<%= pin.image.original.url %>" class="img-thumbnail">
+	<button id="showpagebutton" type='submit'>Save</button>
+
+
+	
+
 		
 
 	</form>

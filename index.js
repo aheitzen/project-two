@@ -208,7 +208,7 @@ app.get('/type', function(req, res) {
 	}
 
 	var pinterestRequests = [firstRequest];
-	for (var i = 0; i < 21; i++) {
+	for (var i = 0; i < 10; i++) {
 	  pinterestRequests.push(otherRequests);
 	}
 

@@ -56,9 +56,6 @@ app.post('/favorite', function(req, res) {
 	}
 });
 
-// app.get('/favorite', function(req, res) {
-// 	res.redirect('/login');
-// })
 
 app.get('/favorite/:userId', function(req, res) {
 	db.user.find({
@@ -83,7 +80,7 @@ app.post('/login',function(req,res){
         res.redirect('/');
       });
     } else {
-      // req.flash('danger', 'Error');
+      req.flash('danger', 'Error');
       res.redirect('/login');
     }
   })(req, res);

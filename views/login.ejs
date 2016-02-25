@@ -1,13 +1,15 @@
-<form method="POST" action='/login'>
-	<input type='text' placeholder='username' name='username'>
-	
 
-<input type='password' placeholder='password' name='password'>
-<button type='submit' class="btn btn-default navbar-btn">login</button>
-	
 
-</form>
-<form method='GET' action='/logout'>
- <button type="submit" class="btn btn-default navbar-btn">logout</button>
+<body id="login">
+<h1 id='login'>Login</h1>
+<hr/>
+	<form id="loginform" method="POST" action='/login'>
+		<div class="form-group"><input type='text' class="form-control" placeholder='username' name='username'></div>
+		<div class="form-group"><input type='password' class="form-control" placeholder='password' name='password'></div>
+		<button id="loginbutton" type='submit' class="btn btn-default navbar-btn">login</button>
+		
 
- </form>
+	</form>
+
+
+ </body>

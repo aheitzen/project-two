@@ -1,7 +1,7 @@
 <h1>THIS IS WHERE THE USERS FAVORITES WILL BE STORED</h1>
 
 <% user.typographies.forEach(function(typography){ %>
-	<img src="<%= typography.image %>">
+	<img src="<%= typography.image %>" class="img-thumbnail">
 	<button href="/favorite/<%= user.id %>/<%=typography.id%>" class='delete-pin'>delete</button>
 <% }) %>
 

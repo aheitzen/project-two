@@ -46,7 +46,7 @@ app.post('/favorite', function(req, res) {
 			user.createTypography({
 				image: req.body.url
 			}).then(function(typography) {
-				res.redirect('/favorite/' + req.user.id)
+				res.redirect('/favorite/')
 			})
 
 		})
@@ -59,7 +59,7 @@ app.post('/favorite', function(req, res) {
 
 app.get('/favorite', function(req, res) {
 	db.user.find({
-		where: {id: req.user.id},
+		where: {id: req.user.id}, 
 		include: [db.typography]
 	}).then(function(user) {
 		res.render('favorite.ejs', {user: user});

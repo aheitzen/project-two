@@ -152,7 +152,12 @@ input#submitbutton {
   margin-top: 30px;
   border: none;
   background-color: white;
+}
 
+img {
+  height: 300px;
+  width: 300px;
+  margin-top: 0 auto;
 }
 
 

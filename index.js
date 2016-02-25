@@ -57,9 +57,9 @@ app.post('/favorite', function(req, res) {
 });
 
 
-app.get('/favorite/:userId', function(req, res) {
+app.get('/favorite', function(req, res) {
 	db.user.find({
-		where: {id: req.params.userId},
+		where: {id: req.user.id},
 		include: [db.typography]
 	}).then(function(user) {
 		res.render('favorite.ejs', {user: user});
@@ -96,6 +96,7 @@ app.get('/signup', function(req, res) {
 	res.render('signup.ejs');
 });
 
+
 app.post('/signup', function(req, res) {
 	db.user.findOne({
 		where: {
@@ -115,7 +116,7 @@ app.post('/signup', function(req, res) {
 					password: req.body.password1
 				}).then(function(newuser) {
 					//the account has been created in the database
-					res.redirect('/')
+					res.redirect('/login')
 				})
 			} else {
 				//passwords don't match, throw error
@@ -124,7 +125,7 @@ app.post('/signup', function(req, res) {
 		}
 	});
 });
-
+//deleting the pictures in favorites
 app.put('/favorite/:userId/:typographyId', function(req, res) {
 	db.user.findById(req.params.userId).then(function(user) {
 			user.removeTypography(req.params.typographyId).then(function() {

@@ -108,6 +108,15 @@ h1#login {
 
 }
 
+h1#signup {
+  font-size: 80px;
+  text-align: center;
+  margin-top: 60px;
+  font-family: 'Sansita One', cursive;
+  color: white;
+
+}
+
 hr {
   margin-left: 500px;
   margin-right: 500px;
@@ -124,6 +133,26 @@ button#loginbutton {
 
 .form-group {
   margin-top: 30px;
+}
+
+body#signup {
+  background-image: url(http://cdn.contentharmony.com/files/2015/12/Screen-Shot-2015-11-19-at-2.44.17-PM.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+input#submitbutton {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 3px;
+  margin-top: 30px;
+  border: none;
+  background-color: white;
+
 }
 
 

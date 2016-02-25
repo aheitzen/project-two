@@ -1,6 +1,83 @@
-body {
-  background-color: blue; }
+@import url(https://fonts.googleapis.com/css?family=Sansita+One);
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100);
+html {
+  height: 100%;
+  width: 100%; }
 
-h1 {
-  font-size: 30px; }
+body {
+  background-image: url(http://24.media.tumblr.com/tumblr_m54j1nIYN21r0k830o1_500.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 100%; }
+
+h1#insta {
+  font-family: 'Sansita One', cursive;
+  color: white;
+  font-size: 120px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 15px; 
+}
+
+body #opacity {
+  background-color: rgba(0, 0, 0, 0.7); 
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0; }
+
+h1#secondtype {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  margin-top: 0; }
+
+.rotate {
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg); }
+
+form {
+  margin-left: 560px;
+  margin-right: 540px; 
+  text-align: center;
+}
+
+  .navbar.navbar-default {
+    background-color: black;
+  }
+
+  input {
+    text-align: center;
+
+  }
+
+  label {
+    color: white;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 30px;
+  }
+
+  button {
+    margin-top: 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    font-size: 25px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: black;
+    font-weight: bold;
+  }
+.glyphicon-camera  {
+    font-size: 40px;
+    color: white;
+
+}
+
+p {
+  text-align: center;
+}
 

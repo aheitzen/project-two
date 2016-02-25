@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.	css">
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAaWlpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAREQAAAAAAAQEQEAAAAAAQEAEBAAAAAQAQAQAQAAAQAQAAEAEAARERERERERAAEAEAABABAAABABABABAAAAARERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD+fwAA/D8AAPpfAAD1rwAA7bcAANvbAACAAQAA29sAAO23AADwDwAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
 	<title></title>
 </head>
-<body class="myBodyClass">
-	<%- body %>
+
+	<body class="myBodyClass">
+	<div id='opacity'>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Sign up <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Log in</a></li>
+      
+        
+      
+    </div>
+  </div>
+</nav>
 
 
+		<%- body %>
+	</div>
 
+	</body>
 
-</body>
 </html>
+
+
 

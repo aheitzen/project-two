@@ -20,6 +20,6 @@ User stories
 As a user I want to browse typography to gain inspiration for future typography projects.
 As a user I want to save typography images to my account.
 
-![alt tag](IMG_1017.jpg)
+![alt tag](Desktop/img_1017.jpg)
 
 

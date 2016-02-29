@@ -1,6 +1,6 @@
 # project-two
 
-Technologies used 
+**Technologies used**
 Html/css 
 Node
 Express 

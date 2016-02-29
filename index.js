@@ -70,6 +70,10 @@ app.get('/login', function(req, res) {
 	res.render('login.ejs');
 });
 
+app.get('/about', function(req, res) {
+	res.render('about.ejs')
+})
+
 app.post('/login',function(req,res){
   passport.authenticate('local', function(err, user, info) {
   	console.log(err);

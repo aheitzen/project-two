@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Sansita+One);
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100);
+
+
+
 html {
   height: 100%;
   width: 100%; }
@@ -247,6 +250,65 @@ body#favoritebody {
   height: 100%;
 }
 
+body#favoriteabout {
+  min-height: 100%;
+  height: 100%;
+  background-image: url(http://cdn.playbuzz.com/cdn/d2541f80-d0d5-4dda-8294-612ce234b68c/d2cba601-d5c1-427d-94e2-d50951ca29a9.jpg);
+}
+
+h1#abouttitle {
+  text-align: center;
+  color: white;
+  font-family: 'Sansita One', cursive;
+  font-size: 60px;
+
+}
+
+p.about {
+  font-size: 29px;
+  color: white;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  display: inline-block;
+  text-align: justify;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+h2 {
+  font-size: 35px;
+  color: white;
+  font-family: 'Sansita One', cursive;
+  text-align: center;
+
+}
+
+p.about {
+  font-size: 27px;
+  color: white;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  display: inline-block;
+  text-align: justify;
+  padding-left: 300px;
+  padding-right: 300px;
+
+}
+
+.fa-github {
+  margin-left: 600px;
+  margin-bottom: 15px;
+  font-size: 70px;
+  color: white;
+  padding: 0;
+}
+
+.fa-linkedin {
+  margin-bottom: 15px;
+  margin-left: 30px;
+  font-size: 70px;
+  color: white;
+  padding: 0;
+
+}
 
 
 

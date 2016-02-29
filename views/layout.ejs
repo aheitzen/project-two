@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.	css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="//code.jquery.com/jquery.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAaWlpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAREQAAAAAAAQEQEAAAAAAQEAEBAAAAAQAQAQAQAAAQAQAAEAEAARERERERERAAEAEAABABAAABABABABAAAAARERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD+fwAA/D8AAPpfAAD1rwAA7bcAANvbAACAAQAA29sAAO23AADwDwAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
@@ -32,11 +33,14 @@
       <ul class="nav navbar-nav">
       	<li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
       	<%if(!currentUser){%>
-        <li><a href="/signup">Sign up</a></li>
+        <li><a href="/signup" >Sign up</a></li>
         <li><a href="/login">Login</a></li>
+        <li><a href="/about">About</a></li>
+          
         <%} else {%>
         <li><a href="/favorite">favorite</a></li>
         <li><a href="/logout">logout</a></li>
+        <li><a href="/about">About</a></li>
         <% } %>
      </ul>
 

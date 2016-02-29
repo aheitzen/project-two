@@ -24,7 +24,6 @@
 * As a user I want to save typography images to my account.
 * As a user I want to edit my account and delete pictures I am no longer using. 
 
-![alt tag](images/IMG_1017 2.jpg)
 ![alt tag](images/IMG_1018.jpg)
 
 

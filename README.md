@@ -6,19 +6,20 @@ Node
 Express 
 Sequeilze 
 
-Approach taken
-Wireframed 
-Consumed an external API (pinterest API)
-Set up routes/views
-Wrote functionality between routes
-Styled using html/css
+**Approach taken**
+* Wireframed 
+* Consumed an external API (pinterest API)
+* Set up routes/views
+* Wrote functionality between routes
+* Styled using html/css
 
-Unsolved problems 
+**Unsolved problems** 
 I used a waterfall method to collect the images from the pinterest API. This makes my app run very slowly and causes my app to crash sporadically without warning. To fix this in the future, I would like to import the images into a database to fix those two problems.
 
-User stories 
+**User stories** 
 As a user I want to browse typography to gain inspiration for future typography projects.
 As a user I want to save typography images to my account.
+As a user I want to edit my account and delete pictures I am no longer using. 
 
 ![alt tag](Desktop/IMG_1017.jpg)
 

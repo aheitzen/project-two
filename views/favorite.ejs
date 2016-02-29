@@ -2,9 +2,6 @@
 <p><span class="glyphicon glyphicon-heart"></span></p>
 <h1 id="yourfavs">Your Favorites</h1>
 <hr/>
-
-
-
 <% user.typographies.forEach(function(typography){ %>
 	<img id="favoriteimg" src="<%= typography.image %>" class="img-thumbnail">
 	<button id="favoritebutton" href="/favorite/<%= user.id %>/<%=typography.id%>" class='delete-pin'>delete</button>

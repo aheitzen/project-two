@@ -12,6 +12,7 @@ body#index {
   background-size: 100%;
   height: 100%;
   width: 100%; 
+  background-size: cover;
 }
 
 h1#insta {
@@ -190,7 +191,8 @@ button#showpagebutton {
 }
 
 form#showpageform {
- margin-left: 480px;
+ margin-left: 35%; 
+/* margin: 5px auto;*/
 }
 
 h1#showpagetitle {
@@ -284,6 +286,9 @@ p.about {
   color: white;
   padding: 0;
 }
+
+
+
 
 
 
